@@ -1,13 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from 'react-router-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import App from './App';
+import Home from './pages/Home';
+import SuperHeroes from './pages/SuperHeroes';
+import RQSuperHeroes from './pages/RQSuperHeroes';
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<App />}>
+      <Route index element={<Home />} />
+      <Route path='/super-heroes' element={<SuperHeroes />} />
+      <Route path='rq-super-heroes' element={<RQSuperHeroes />} />
+    </Route>
+  )
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
