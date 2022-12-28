@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 export default function SuperHeroes() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     axios
@@ -11,11 +12,19 @@ export default function SuperHeroes() {
       .then((res) => {
         setData(res.data);
         setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setIsLoading(false);
       });
   }, []);
 
   if (isLoading) {
     return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
   }
 
   return (
