@@ -14,7 +14,11 @@ export default function RQSuperHeroes() {
     error,
   } = useQuery(['super-heroes'], fetchSuperHeroes, {
     // cacheTime: 5000,
-    staleTime: 30000,
+    // staleTime: 30000,
+    // refetchOnMount: true,
+    // refetchOnWindowFocus: true,
+    refetchInterval: 2000,
+    refetchIntervalInBackground: true,
   });
 
   console.log({ isLoading, isFetching });
