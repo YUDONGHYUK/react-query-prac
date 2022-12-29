@@ -17,6 +17,8 @@ import RQSuperHero from './pages/RQSuperHero';
 import ParallelQueries from './pages/ParallelQueries';
 import DynamicParallel from './pages/DynamicParallel';
 import DependentQueries from './pages/DependentQueries';
+import PaginatedQueries from './pages/PaginatedQueries';
+import InfiniteQueries from './pages/InfiniteQueries';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,6 +36,8 @@ const router = createBrowserRouter(
         path='/rq-dependent'
         element={<DependentQueries email='doyu@example.com' />}
       />
+      <Route path='rq-paginated' element={<PaginatedQueries />} />
+      <Route path='rq-infinite' element={<InfiniteQueries />} />
     </Route>
   )
 );
