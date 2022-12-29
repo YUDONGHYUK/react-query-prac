@@ -1,9 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-
-const fetchSuperHeroes = () => {
-  return axios.get('http://localhost:4000/superheroes');
-};
+import { useSuperHeroesData } from '../hooks/useSuperHeroesData';
 
 export default function RQSuperHeroes() {
   const onSuccess = (data) => {
@@ -20,24 +15,7 @@ export default function RQSuperHeroes() {
     isError,
     error,
     refetch,
-  } = useQuery(['super-heroes'], fetchSuperHeroes, {
-    // cacheTime: 5000,
-    // staleTime: 30000,
-    // refetchOnMount: true,
-    // refetchOnWindowFocus: true,
-    // refetchInterval: 2000,
-    // refetchIntervalInBackground: true,
-    // enabled: false,
-    // refetchInterval: interval,
-    onSuccess,
-    onError,
-    select: ({ data }) => {
-      const heroNames = data.map((hero) => hero.name);
-      return heroNames;
-    },
-  });
-
-  console.log({ isLoading, isFetching });
+  } = useSuperHeroesData(onSuccess, onError);
 
   if (isFetching) {
     return <h2>Loading...</h2>;
