@@ -16,6 +16,7 @@ import RQSuperHeroes from './pages/RQSuperHeroes';
 import RQSuperHero from './pages/RQSuperHero';
 import ParallelQueries from './pages/ParallelQueries';
 import DynamicParallel from './pages/DynamicParallel';
+import DependentQueries from './pages/DependentQueries';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,10 @@ const router = createBrowserRouter(
       <Route
         path='/rq-dynamic-parallel'
         element={<DynamicParallel heroIds={[1, 3]} />}
+      />
+      <Route
+        path='/rq-dependent'
+        element={<DependentQueries email='doyu@example.com' />}
       />
     </Route>
   )

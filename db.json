@@ -29,5 +29,17 @@
       "id": 3,
       "name": "Aron"
     }
+  ],
+  "users": [
+    {
+      "id": "doyu@example.com",
+      "channelId": "doyu"
+    }
+  ],
+  "channel": [
+    {
+      "id": "doyu",
+      "courses": ["react", "javascript", "typescript"]
+    }
   ]
 }
