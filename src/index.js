@@ -14,6 +14,8 @@ import Home from './pages/Home';
 import SuperHeroes from './pages/SuperHeroes';
 import RQSuperHeroes from './pages/RQSuperHeroes';
 import RQSuperHero from './pages/RQSuperHero';
+import ParallelQueries from './pages/ParallelQueries';
+import DynamicParallel from './pages/DynamicParallel';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +24,11 @@ const router = createBrowserRouter(
       <Route path='/super-heroes' element={<SuperHeroes />} />
       <Route path='/rq-super-heroes' element={<RQSuperHeroes />} />
       <Route path='/rq-super-heroes/:heroId' element={<RQSuperHero />} />
+      <Route path='/rq-parallel' element={<ParallelQueries />} />
+      <Route
+        path='/rq-dynamic-parallel'
+        element={<DynamicParallel heroIds={[1, 3]} />}
+      />
     </Route>
   )
 );
