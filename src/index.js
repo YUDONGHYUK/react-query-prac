@@ -13,13 +13,15 @@ import App from './App';
 import Home from './pages/Home';
 import SuperHeroes from './pages/SuperHeroes';
 import RQSuperHeroes from './pages/RQSuperHeroes';
+import RQSuperHero from './pages/RQSuperHero';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route index element={<Home />} />
       <Route path='/super-heroes' element={<SuperHeroes />} />
-      <Route path='rq-super-heroes' element={<RQSuperHeroes />} />
+      <Route path='/rq-super-heroes' element={<RQSuperHeroes />} />
+      <Route path='/rq-super-heroes/:heroId' element={<RQSuperHero />} />
     </Route>
   )
 );
