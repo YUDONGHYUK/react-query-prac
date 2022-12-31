@@ -33,7 +33,7 @@ export default function RQSuperHeroes() {
     addHero(hero);
   };
 
-  if (isFetching) {
+  if (isLoading) {
     return <h2>Loading...</h2>;
   }
 
